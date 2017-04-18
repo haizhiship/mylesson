@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+     xmlns:scope="http://www.example.org/schema/scope"      
+     xsi:schemaLocation="  
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
+     http://www.example.org/schema/scope http://www.example.org/schema/scope.xsd">  
+   <bean id="testBean" class="customTag.User" scope="thread"/> 
+   <scope:thread id="threadscope"/>
+</beans>
