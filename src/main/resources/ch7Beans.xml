@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+     xmlns:scope="http://www.example.org/schema/scope"      
+     xsi:schemaLocation="  
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
+     http://www.example.org/schema/scope http://www.example.org/schema/scope.xsd">  
+   
+   <bean id="helloWorld" class="ch7.postprocessor.HelloWorld" > 
+   	<property name="message" value="hellWorld"/>
+   </bean>
+   
+   <!--此处定义了一个后置处理器，则生成bean后会调用后置处理器类的方法  -->
+   <bean class="ch7.postprocessor.DemoBeanPostProcessor"/>
+   
+</beans>
