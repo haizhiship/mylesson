@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+      xmlns:context="http://www.springframework.org/schema/context"
+      xmlns:util="http://www.springframework.org/schema/util" 
+      xsi:schemaLocation="  
+     http://www.springframework.org/schema/beans 
+     http://www.springframework.org/schema/beans/spring-beans.xsd
+     http://www.springframework.org/schema/util
+     http://www.springframework.org/schema/context/spring-util-3.0.xsd 
+     http://www.springframework.org/schema/context
+     http://www.springframework.org/schema/context/spring-context-3.0.xsd 
+     http://www.springframework.org/schema/aop
+     http://www.springframework.org/schema/aop/spring-aop.xsd">
+     
+     <bean id="t" class="ch10.convert.Team">
+     	<property name="names" value="a,b,c,d"/>
+     	<property name="leader" value="geym"/>
+     </bean> 
+     <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+     	<property name="customEditors">
+     		<map>
+     			<entry key="java.util.list" value="ch10.convert.ListTypeEditSupport"/>
+     		</map>
+     	</property>
+     </bean>
+     
+     <bean id="conversionService"
+     	class="org.springframework.context.support.ConversionServiceFactoryBean">
+     		<property name="converters">
+     			<list>
+     				<bean class="ch10.convert.MemberConverter"/>
+     			</list>
+     		</property>
+     
+     </bean>
+     
+     
+</beans>
